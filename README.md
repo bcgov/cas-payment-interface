@@ -1,6 +1,8 @@
 # CASInterfaceService
-This is a work in progress at this time.
+An API for submitting and requesting specific types of transaction data from CAS.
 
-This will be an interface between the BC Government and CAS. It will take a json package and communicate the information with CAS. 
+API endpoints:
+* **api/CASAPTransaction** - Submit a transaction (payment request) to CAS.
+* **api/CASAPRetrieve/GetTransactionRecords** - Request details for a specific transaction. Despite name, does not accept batch requests.
 
-More to come...
+These requests will not go through without CAS-approved authentication headers.
