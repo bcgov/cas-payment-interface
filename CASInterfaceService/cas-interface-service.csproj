@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Pages\Controllers\StudentRetriveController.cs" />
     <Content Include="Pages\Models\CASAPTransaction.cs" />
   </ItemGroup>
 

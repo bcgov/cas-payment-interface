@@ -8,7 +8,4 @@ namespace Gov.Cscp.VictimServices.Public.JsonObjects
         public Boolean IsSuccess { get; set; }
         public String Result { get; set; }
     }
-
 }
-
-

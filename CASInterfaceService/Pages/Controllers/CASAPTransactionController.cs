@@ -29,7 +29,6 @@ namespace CASInterfaceService.Pages.Controllers
         [HttpPost]
         public async Task<JObject> RegisterCASAPTransaction(CASAPTransaction casAPTransaction)
         {
-
             // Get the header
             var re = Request;
             var headers = re.Headers;
@@ -77,7 +76,7 @@ namespace CASInterfaceService.Pages.Controllers
                 var formData = new List<KeyValuePair<string, string>>();
                 formData.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
 
-                 Console.WriteLine(DateTime.Now + " Add credentials");
+                Console.WriteLine(DateTime.Now + " Add credentials");
                 request.Content = new FormUrlEncodedContent(formData);
                 var response = await client.SendAsync(request);
 
@@ -126,30 +125,6 @@ namespace CASInterfaceService.Pages.Controllers
             var xjo = JObject.Parse(outputMessage);
             Console.WriteLine(DateTime.Now + " Successfully sent invoice: " + casAPTransaction.invoiceNumber);
             return xjo;
-        }
-
-        [HttpPost("InsertCASAPTransaction")]
-        public IActionResult InsertCASAPTransaction(CASAPTransaction casAPTransaction)
-        {
-            try
-            {
-                Console.WriteLine(DateTime.Now + " In InsertCASAPTransaction");
-                CASAPTransactionRegistrationReply casregreply = new CASAPTransactionRegistrationReply();
-                CASAPTransactionRegistration.getInstance().Add(casAPTransaction);
-                casregreply.RegistrationStatus = "Success";
-
-                // Now we must call CAS with this data
-                //Task<string> outputResult = CASAPTransactionRegistration.getInstance().sendTransactionsToCAS(casAPTransaction);
-                //casregreply.RegistrationStatus = Convert.ToString(outputResult);
-
-                return Ok(casregreply);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(DateTime.Now + " Error in InsertCASAPTransaction. " + e.ToString());
-                return StatusCode(e.HResult);
-            }
-
         }
     }
 }

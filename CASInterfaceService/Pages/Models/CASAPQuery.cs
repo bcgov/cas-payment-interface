@@ -34,33 +34,5 @@ namespace CASInterfaceService.Pages.Models
             get { return SupplierSiteNumber; }
             set { SupplierSiteNumber = value; }
         }
-
-        //String invoiceStatus;
-        //public string InvoiceStatus
-        //{
-        //    get { return invoiceStatus; }
-        //    set { invoiceStatus = value; }
-        //}
-
-        //String paymentStatus;
-        //public string PaymentStatus
-        //{
-        //    get { return paymentStatus; }
-        //    set { paymentStatus = value; }
-        //}
-
-        //Double paymentNumber;
-        //public Double PaymentNumber
-        //{
-        //    get { return paymentNumber;  }
-        //    set { paymentNumber = value; }
-        //}
-
-        //DateTime paymentDate;
-        //public DateTime PaymentDate
-        //{
-        //    get { return paymentDate; }
-        //    set { paymentDate = value; }
-        //}
     }
 }
