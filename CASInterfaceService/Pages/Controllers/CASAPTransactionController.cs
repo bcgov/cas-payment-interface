@@ -34,7 +34,7 @@ namespace CASInterfaceService.Pages.Controllers
             var headers = re.Headers;
 
             // Get secret information
-            Console.WriteLine(DateTime.Now + " Get Secret information.");
+            Console.WriteLine(DateTime.Now + " INFO: Get Secret information.");
             var builder = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
                 .AddUserSecrets<Program>(); // must also define a project guid for secrets in the .cspro – add tag <UserSecretsId> containing a guid
